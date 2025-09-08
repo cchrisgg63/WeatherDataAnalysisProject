@@ -96,16 +96,15 @@ data1 = selected[selected['USAF'] == 28450]
 #rovaniemi
 data2 = selected[selected['USAF'] == 29980]
 
-
+print()
 
 print('Median Celsius for Kumpula was: ')
-print()
 print(data1['Celsius'].median())
 print()
 
 text = 'Kumpula May Weather Statistics are:  '
 print(text.center(50))
-
+print()
 #this variable below will only select the tables dates from a certain date which is listed below...
 
 may_values = data1.loc[
@@ -113,51 +112,62 @@ may_values = data1.loc[
     (data1['YR--MODAHRMN'] < 201706010000)
 ]
 #round will shorten the calculation and give a easier to read number
-print('May Mean is : ')
-print(round(may_values['Celsius'].mean(), 1))
-print('May max Celsius is: ')
-print(may_values['Celsius'].max())
-print('May min is : ')
-print(may_values['Celsius'].min())
 
+KumpCelMeanMay = round(may_values['Celsius'].mean(), 1)
+print(f'May Mean is :   {KumpCelMeanMay}')
+
+KumpCelMaxMay = may_values['Celsius'].max()
+print(f'May max Celsius is: {KumpCelMaxMay}')
+
+KumpCelMinMay = may_values['Celsius'].min()
+print(f'May min is : {KumpCelMinMay}')
+
+print()
 text = 'Kumpula June Weather Statistics are:  '
 print(text.center(50))
+print()
 
 june_values = data1.loc[
     (data1['YR--MODAHRMN'] >= 201705010000) & 
     (data1['YR--MODAHRMN'] < 201706010000)
 ]
 
+KumpCelMean = round(june_values['Celsius'].mean(), 1)
+print(f'May Mean is :   {KumpCelMean}')
 
-print('June mean was : ')
-print(round(june_values['Celsius'].mean(), 1))
-print('June max was : ')
-print(june_values['Celsius'].max())
-print('June min was : ')
-print(june_values['Celsius'].min())
+KumpCelMax = june_values['Celsius'].max()
+print(f'May max Celsius is: {KumpCelMax}')
+
+KumpCelMin = june_values['Celsius'].min()
+print(f'May min is : {KumpCelMin}')
 
 
 #Now to process Rovaniemi's data
-
-print('Median Celsius for Rovaniemi was: ')
 print()
+print('Median Celsius for Rovaniemi was: ')
 print(data2['Celsius'].median())
 print()
 
 text = 'Rovaniemi May Weather Statistics are:  '
 print(text.center(50))
+print()
 
 may_values2 = data2.loc[
     (data2['YR--MODAHRMN'] >= 201705010000) & 
     (data2['YR--MODAHRMN'] < 201706010000)
 ]
 
-print('May Mean is : ')
-print(round(may_values2['Celsius'].mean(), 1))
-print('May max Celsius is: ')
-print(may_values2['Celsius'].max())
-print('May min is : ')
-print(may_values2['Celsius'].min())
+RovCelMeanMay = round(may_values2['Celsius'].mean(), 1)
+print(f'May Mean is :   {RovCelMeanMay}')
+
+RovCelMaxMay = may_values2['Celsius'].max()
+print(f'May max Celsius is: {RovCelMaxMay}')
+
+RovCelMinMay = may_values2['Celsius'].min()
+print(f'May min is : {RovCelMinMay}')
+
+
+print()
 
 june2_values = data2.loc[
     (data2['YR--MODAHRMN'] >= 201706010000) & 
@@ -166,13 +176,15 @@ june2_values = data2.loc[
 
 text = 'Rovaniemi June Weather Statistics are:  '
 print(text.center(50))
+print()
 
+RovCelMean= round(june2_values['Celsius'].mean(), 1)
+print(f'June Mean is :  {RovCelMean}')
 
-print('June Mean is : ')
-print(round(june2_values['Celsius'].mean(), 1))
-print('June max Celsius is: ')
-print(june2_values['Celsius'].max())
-print('June min is : ')
-print(june2_values['Celsius'].min())
+RovCelMax = june2_values['Celsius'].max()
+print(f'June max Celsius is: {RovCelMax}')
+
+RovCelMin = june2_values['Celsius'].min()
+print(f'June min is : {RovCelMin}')
 
 print()
